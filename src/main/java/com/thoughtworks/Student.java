@@ -3,6 +3,7 @@ package com.thoughtworks;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Objects;
 
 public class Student {
   private String name;
@@ -31,5 +32,10 @@ public class Student {
     if (o == null || getClass() != o.getClass()) return false;
     Student student = (Student) o;
     return id.equals(student.id);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(id);
   }
 }
